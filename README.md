@@ -2,32 +2,63 @@
 Ini adalah repo perkembangan belajar bahasa pyhton
 
 
-name contention -> kesepakatan penamaan untuk konsistensi kode
-- camel case -> myName 
-- snake case -> my_name
+### 1. Naming Convention
+Kesepakatan penamaan untuk konsistensi kode:
+*   **Camel Case** -> `myName`
+*   **Snake Case** -> `my_name`
 
-white space -> karakter kosong yang tidak terlihat tetapi tetap dibaca oleh interpreter python fungsi utamanya utnuk struktur dan keterbacaan
-- spasi -> x = 1 + 10
+---
 
-- tab -> print("\thalo") 
-	output	=	halo
+### 2. White Space
+Karakter kosong yang tidak terlihat tetapi tetap dibaca oleh interpreter Python. Fungsi utamanya adalah untuk struktur dan keterbacaan:
 
-- newline -> print("my\nname")
-	output = my
-		 name
+*   **Spasi**
+    ```python
+    x = 1 + 10
+    ```
 
-syntax separator -> aturan pemisah statement dalam Python
-- Newline -> print("my")
-	     print("name")
+*   **Tab** (`\t`)
+    ```python
+    print("\thalo")
+    # Output:    halo
+    ```
 
-- Semicolon -> print("my"); print("name")
+*   **Newline** (`\n`)
+    ```python
+    print("my\nname")
+    # Output:
+    # my
+    # name
+    ```
 
-- Backslash -> untuk melanjutkan beris dibawahnya
-x = 2 + 3 + 4 \
-9 + 4
+---
 
-- Implicit continuation (), [], {} -> memecah pernyataan panjang menjadi beberapa baris tanpa perlu menggunakan tanda (\) untuk meningkatkan keterbacaan kode 	
-numbers = [
-    1, 2, 3,
-    4, 5
-]
+### 3. Syntax Separator
+Aturan pemisah statement dalam Python:
+
+*   **Newline** (Baris Baru)
+    ```python
+    print("my")
+    print("name")
+    ```
+
+*   **Semicolon** (Titik Koma)
+    ```python
+    print("my"); print("name")
+    ```
+
+*   **Backslash** (`\`)
+    Digunakan untuk melanjutkan baris di bawahnya agar tetap terbaca sebagai satu statement:
+    ```python
+    x = 2 + 3 + 4 \
+    9 + 4
+    ```
+
+*   **Implicit Continuation** `()`, `[]`, `{}`
+    Memecah pernyataan panjang menjadi beberapa baris tanpa perlu menggunakan tanda backslash (`\`) untuk meningkatkan keterbacaan kode:
+    ```python
+    numbers = [
+        1, 2, 3,
+        4, 5
+    ]
+    ```
