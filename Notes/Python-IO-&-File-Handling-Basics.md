@@ -29,7 +29,7 @@ Hasil:  7
 ```
 
 ## 2. Print Parameters
-- `sep` → pemisah antar argumen `sup=("")`
+- `sep` → pemisah antar argumen `sup=("")` tidak perlu digunakan jika menggunakan string formatting 
 - `end` → untuk mengontrol baris baru saat mencetak `end="\n\n"`
 - `flush` → memaksa output muncul segera `flush=True OR flush=False`
 ### Contoh
@@ -77,11 +77,14 @@ print(f"Halo {name1} {name2})
 name1 = "Edwin"
 name2 = "Jul"
 
-print("Halo {} {}".format(name1, name2), end="\n\n", file=open("x.txt", "w"), flush=True)
+- print("Halo {} {}".format(name1, name2), end="\n\n", file=open("x.txt", "w"), flush=True)
+- with open("x.txt", "w") as f:
+     print("Halo", "{} {}".format(name1, name2), end="\n\n", file=f, flush=True)
 
 OR
 
-with open("x.txt", "w") as f:
-     print("Halo", "{} {}".format("Edwin", jul), end="\n\n", file=f, flush=True)
+- print(f"Halo {name1} {name2}", end="\n\n", file=open("x.txt", "w"), flush=True)
+- with open("x.txt", "w") as f:
+     print(f"Halo {name1} {name2}", end="\n\n", file=f, flush=True)
 
 ```
