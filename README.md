@@ -6,7 +6,7 @@ Ini adalah repo perkembangan belajar bahasa pyhton
 Kesepakatan penamaan untuk konsistensi kode:
 *   **Camel Case** -> `myName`
 *   **Snake Case** -> `my_name`
-
+*   **UPPER CASE** -> `konstanta`
 ---
 
 ### 2. White Space
