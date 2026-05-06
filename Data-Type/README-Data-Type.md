@@ -1,27 +1,29 @@
 # Tipe data dasar
 
 ## 1. numeric
-- Integer `3`
-- float `3.14`
-- complex number `a = 1 + 1i`
+- Integer `3` -> bilangan bulat.
+- float `3.14` -> bilangan desimal.
+- complex number `a = 1 + 1i` -> bilangan kompleks dengan bagian real dan imajiner.
 
 ## 2. Sequence
-- string `"hallo", "1", "3.14"`
-- list `[]`
-- tuple `()`
+kumpulan data yang terurut dan dapat diakses berdasarkan indeks.
+- string `"hallo"` -> urutan karakter.
+- list `[]` -> daftar elemen yang bisa berbeda tipe.
+- tuple `()` -> mirip list tapi tidak bisa diubah.
 
 ## 3. Dictionary `{}`
+menyimpan data dalam pasangan {`"key"`: `value`} yang dapat diakses langsung melalui key.
 
 ## 4. Boolean
-` true `
-` false `
+hanya memiliki dua nilai, ` true ` atau ` false `  digunakan untuk kondisi logika.
 
 ## 5. set `{}`
+kumpulan data unik yang tidak berurutan dan tidak memiliki indeks.
 
 ## Type Casting
-`implicit` sudah otomatis dari python
+`implicit` sudah otomatis dari python.
 
-`explicit` kita yang mengubahnya
+`explicit` kita yang mengubahnya.
 
 `int()` `float()` `bool()` `str()` `ord()` `hex()` `oct()` `tuple()` `dict()` `set()` `list()`
 
