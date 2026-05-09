@@ -24,7 +24,6 @@ biaya_berat = inp1 * harga["HARGA_PER_KG"]
 biaya_jarak = inp2 * harga["HARGA_PER_KM"]
 total_biaya = biaya_berat + biaya_jarak
 
-biaya_tambahan_berat 
 if inp1 > 15:
     total_biaya += 5000
 
