@@ -44,6 +44,6 @@ while True:
     else:
       print("Pastikan ketik y/n")
       continue
-  if pesanan_tambahan == no:
+  if pesanan_tambahan == "n":
     break
 print(f"Total bayar {total_belanja}")
