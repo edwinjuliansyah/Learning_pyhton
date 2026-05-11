@@ -9,7 +9,17 @@
 kumpulan data yang terurut dan dapat diakses berdasarkan indeks.
 - string `"hallo"` -> urutan karakter.
 - list `[]` -> daftar elemen yang bisa berbeda tipe.
+    - list = [1, 2, 3, 4, 5]
+    - list.insert(len(list), 6)
+    - list.append(6)
+    - list.extend([6, 7, 8, 9])
+    - list.pop(4)
+    - del list[2]
 - tuple `()` -> mirip list tapi tidak bisa diubah.
+    - tuple = (1, "strings", 4.5, True)
+    - print(tuple.count('strings')) #output 1
+    - print(tuple.index(4.5)) #output 2
+
 
 ## 3. Dictionary `{}`
 menyimpan data dalam pasangan {`"key"`: `value`} yang dapat diakses langsung melalui key.
@@ -18,7 +28,29 @@ menyimpan data dalam pasangan {`"key"`: `value`} yang dapat diakses langsung mel
 hanya memiliki dua nilai, ` true ` atau ` false `  digunakan untuk kondisi logika.
 
 ## 5. set `{}`
-kumpulan data unik yang tidak berurutan dan tidak memiliki indeks.
+kumpulan data unik yang tidak berurutan, tidak memiliki indeks, dan immutable.
+- set = {1, 2, 3, 4, 5, 5} set tidak bisa menerima nilai duplikat
+  - set.add(6)
+  - set.remove(2)
+  - set.discard(2)
+
+- set1 = {1, 2, 3, 4, 5}
+- set2 = {4, 5, 6, 7, 8}
+  - print(set1.union(set2)) # menggabungkan 2 set menjadi 1
+  #or
+  - print(set1 | set2)
+ 
+  - print(set1.intersection(set2)) hasil {4, 5}
+  #or
+  - print(set1 & set2)
+
+  - print(set1.difference(set2)) hasil {1, 2, 3} yang ada di 1 tidak ada di 2 
+  #or 
+  - print(set1 - set2)
+
+  - print(set1.symmetric_difference(set2)) hasil {1, 2, 3, 6, 7, 8} yang ada di 1 dan 2 tidak di tampilkan
+  #or 
+  - print(set1 ^ set2)
 
 ## Type Casting
 `implicit` sudah otomatis dari python.
