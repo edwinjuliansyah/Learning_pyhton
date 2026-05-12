@@ -1,5 +1,8 @@
 warkop = "=== SELAMAT DATANG DI WARKOP EMUN ==="
 total_belanja = 0
+keranjang = {}
+def garis():
+  print("=" * len(warkop))
 
 print(warkop)
 menu = {
@@ -12,14 +15,13 @@ menu = {
 
 for item in menu:
     print(f"{item}. {menu[item]['nama']} - Rp {menu[item]['harga']}")
-print("=" * len(warkop))
+garis()
 
 while True:
   try:
     pesanan = input("Pilih menu (1-5): ")
     if pesanan in menu:
       quantity = int(input("Masukkan jumlah pesanan: "))
-      total_belanja += menu[pesanan]["harga"] * quantity
     else:
       print("Menu tidak tersedia")
       continue
@@ -27,6 +29,28 @@ while True:
     print("Input tidak valid, pastikan input berupa angka")
     continue 
   
+  nama = menu[pesanan]["nama"]
+  harga = menu[pesanan]["harga"]
+  subtotal = harga * quantity
+
+  if pesanan in keranjang:
+    keranjang[pesanan]["jumlah"] += quantity
+    keranjang[pesanan]["subtotal"] += subtotal
+  else:
+    keranjang[pesanan] = {
+        "nama": nama,
+        "harga": harga,
+        "jumlah": quantity,
+        "subtotal": subtotal
+    }
+  total_belanja += subtotal
+  
+  garis()
+  print(f"Isi keranjang saat ini")
+  for key, value in keranjang.items():
+    print(f"- {value["jumlah"]} {value["nama"]} x Rp{value["harga"]} = Rp{value["subtotal"]}")
+  garis()
+
   while True:
     pesanan_tambahan = input("Apakah ada pesanan tambahan? (y/n): ")
     if pesanan_tambahan == "y":
@@ -38,4 +62,10 @@ while True:
       continue
   if pesanan_tambahan == "n":
     break
-print(f"Total bayar {total_belanja}")
+
+garis()
+print(f"Pesanan kamu")
+for key, value in keranjang.items():
+  print(f"- {value["jumlah"]} {value["nama"]} x Rp{value["harga"]} = Rp{value["subtotal"]}")
+garis()
+print(f"Total bayar Rp{total_belanja}")
