@@ -22,7 +22,36 @@ kumpulan data yang terurut dan dapat diakses berdasarkan indeks.
 
 
 ## 3. Dictionary `{}`
-menyimpan data dalam pasangan {`"key"`: `value`} yang dapat diakses langsung melalui key.
+menyimpan data dalam pasangan {`"key"`: `value`} yang dapat diakses langsung melalui key. Dictionary menerima key dengan type string, integer, tuple `(2, 3)`. Jika kunci duplikat, isi kunci lama akan tertimpa dengan isi kunci baru. 
+```python
+kamus = {1: "kopi", 2: "teh", 3: "roti" }
+kamus[2] = "susu" #ubah value
+del kamus[1] #menghapus dict
+kamus[3] = "indomie" #update value key 3
+print(kamus)
+#output
+#{2: 'susu', 3: 'indomie'}
+```
+```python
+kamus = {}  #deklarasi dict kosong, secara default ini typenya dict bukan set
+kamus[6] = "kucing"
+kamus[3] = "anjing"
+kamus[2] = "kelinci"
+kamus["nama"] = "kuda"
+kamus[10] = "kepiting"
+kamus[(2, 3)] = "kerbau"
+del kamus[3]
+
+for i in kamus:
+  print(i, kamus[i], sep=" -> ")
+
+#output
+#6 -> kucing
+#2 -> kelinci
+#nama -> kuda
+#10 -> kepiting
+#(2, 3) -> kerbau
+```
 
 ## 4. Boolean
 hanya memiliki dua nilai, ` true ` atau ` false `  digunakan untuk kondisi logika.
