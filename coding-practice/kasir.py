@@ -16,18 +16,10 @@ print("=" * len(warkop))
 
 while True:
   try:
-    pesanan = int(input("Pilih menu (1/2/3/4/5): "))
-    quantity = int(input("Masukkan jumlah pesanan: "))
-    if pesanan == 1:
-      total_belanja += menu["1"]["harga"] * quantity
-    elif pesanan == 2:
-      total_belanja += menu["2"]["harga"] * quantity
-    elif pesanan == 3:
-      total_belanja += menu["3"]["harga"] * quantity
-    elif pesanan == 4:
-      total_belanja += menu["4"]["harga"] * quantity
-    elif pesanan == 5:
-      total_belanja += menu["5"]["harga"] * quantity 
+    pesanan = input("Pilih menu (1-5): ")
+    if pesanan in menu:
+      quantity = int(input("Masukkan jumlah pesanan: "))
+      total_belanja += menu[pesanan]["harga"] * quantity
     else:
       print("Menu tidak tersedia")
       continue
