@@ -9,6 +9,20 @@ Digunakan untuk mengecek kondisi berdasarkan nilai Boolean (True/False). Python 
 - elif (else if): Kondisi tambahan jika if sebelumnya salah. Bisa ada banyak elif.
 
 - else: "Pilihan terakhir" jika semua kondisi di atas tidak ada yang benar.
+```python
+status = 404
+
+if status == 200:
+    print("OK")
+elif status == 404:
+    print("Not Found")
+elif status == 500:
+    print("Server Error")
+else:
+    print("Unknown status")
+#output
+#Not Found
+```
 
 ## Match statement
 
@@ -17,7 +31,21 @@ Diperkenalkan pada Python 3.10. Lebih bersih dan efisien daripada if-elif yang p
 - case: Nilai yang dicocokkan.
 
 - case _: Wildcard (seperti else). Menangkap apa pun yang tidak cocok dengan case sebelumnya.
+```python
+status = 404
 
+match status:
+    case 200:
+        print("OK")
+    case 404:
+        print("Not Found")
+    case 500:
+        print("Server Error")
+    case _:
+        print("Unknown status")
+#output
+#Not Found
+```
 
 ## Loop statement 
 
