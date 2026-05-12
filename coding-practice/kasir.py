@@ -1,8 +1,16 @@
 warkop = "=== SELAMAT DATANG DI WARKOP EMUN ==="
+
 total_belanja = 0
+
 keranjang = {}
+
 def garis():
   print("=" * len(warkop))
+
+def tampilkan_keranjang(massage):
+  print(massage)
+  for key, value in keranjang.items():
+    print(f"- {value['jumlah']} {value['nama']} x Rp{value['harga']} = Rp{value['subtotal']}")
 
 print(warkop)
 menu = {
@@ -46,9 +54,7 @@ while True:
   total_belanja += subtotal
   
   garis()
-  print(f"Isi keranjang saat ini")
-  for key, value in keranjang.items():
-    print(f"- {value["jumlah"]} {value["nama"]} x Rp{value["harga"]} = Rp{value["subtotal"]}")
+  tampilkan_keranjang("Isi keranjang saat ini:")
   garis()
 
   while True:
@@ -64,8 +70,6 @@ while True:
     break
 
 garis()
-print(f"Pesanan kamu")
-for key, value in keranjang.items():
-  print(f"- {value["jumlah"]} {value["nama"]} x Rp{value["harga"]} = Rp{value["subtotal"]}")
+tampilkan_keranjang("Pesanan kamu:")
 garis()
 print(f"Total bayar Rp{total_belanja}")
