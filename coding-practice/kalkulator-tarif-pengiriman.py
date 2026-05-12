@@ -1,3 +1,9 @@
+jasa = "=== SELAMAT DATANG DI EMUN EXPRESS ==="
+
+def garis():
+  print("=" * len(jasa))
+
+print(jasa)
 harga = {
   "PER_KG": 2000,
   "PER_KM": 3000
@@ -8,8 +14,15 @@ surcharge = {
     "JARAK>50KM": 10000
 }
 
-print(f"Harga per Kg {harga['PER_KG']} dan Harga per Km {harga['PER_KM']}\n\nSurcharge berat > 15Kg {surcharge['BERAT>15KG']} dan \
-Surcharge > 50Km {surcharge['JARAK>50KM']}\n\n")
+print("Tarif pengiriman")
+for item in harga:
+  print(f"{item} = Rp{harga[item]}")
+garis()
+
+print("Tarif tambahan")
+for item in surcharge:
+  print(f"{item} = Rp{surcharge[item]}")
+garis()
 
 while True:
   try:
@@ -32,4 +45,5 @@ if inp1 > 15:
 if inp2 > 50:
   total_biaya += surcharge["JARAK>50KM"]
 
-print(f"Total biaya: {total_biaya}")
+garis()
+print(f"Total biaya Rp{total_biaya}")
