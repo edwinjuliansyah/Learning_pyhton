@@ -10,26 +10,26 @@ def garis():
 def tampilkan_keranjang(massage):
   print(massage)
   for key, value in keranjang.items():
-    print(f"- {value['jumlah']} {value['nama']} x Rp{value['harga']} = Rp{value['subtotal']}")
+    print(f"- {value['jumlah']} {value['nama']:<10} x Rp{value['harga']} = Rp{value['subtotal']:>6}")
 
 print(warkop)
 menu = {
-    "1": {"nama": "Roti", "harga": 2000},
-    "2": {"nama": "Susu", "harga": 3000},
-    "3": {"nama": "Kopi", "harga": 3000},
-    "4": {"nama": "Gorengan", "harga": 2000},
-    "5": {"nama": "Indomie", "harga": 6000}
+    1: {"nama": "Roti", "harga": 2000},
+    2: {"nama": "Susu", "harga": 3000},
+    3: {"nama": "Kopi", "harga": 3000},
+    4: {"nama": "Gorengan", "harga": 2000},
+    5: {"nama": "Indomie", "harga": 6000}
 }
 
 for item in menu:
-    print(f"{item}. {menu[item]['nama']} - Rp {menu[item]['harga']}")
+    print(f"{item}. {menu[item]['nama']:<10} | Rp {menu[item]['harga']:>6}")
 garis()
 
 while True:
   try:
-    pesanan = input("Pilih menu (1-5): ")
+    pesanan = int(input("Pilih menu (1-5): ").strip())
     if pesanan in menu:
-      quantity = int(input("Masukkan jumlah pesanan: "))
+      quantity = int(input("Masukkan jumlah pesanan: ").strip())
     else:
       print("Menu tidak tersedia")
       continue
@@ -58,7 +58,7 @@ while True:
   garis()
 
   while True:
-    pesanan_tambahan = input("Apakah ada pesanan tambahan? (y/n): ")
+    pesanan_tambahan = input("Apakah ada pesanan tambahan? (y/n): ").lower().strip()
     if pesanan_tambahan == "y":
       break
     elif pesanan_tambahan == "n":
