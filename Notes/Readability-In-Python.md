@@ -1,12 +1,8 @@
-# Learning_pyhton
-Ini adalah repo perkembangan belajar bahasa pyhton
-
-
 ### 1. Naming Convention
-Kesepakatan penamaan untuk konsistensi kode:
-*   **Camel Case** -> `myName`
-*   **Snake Case** -> `my_name`
-*   **UPPER CASE** -> `konstanta`
+Konvensi penamaan untuk konsistensi kode, standar python PEP 8:
+*   **CamelCase** `MyName` untuk class
+*   **snake_case** `my_name` untuk variabel, function, modules and packages
+*   **UPPER_CASE** `100` untuk konstanta
 ---
 
 ### 2. White Space
@@ -62,3 +58,4 @@ Aturan pemisah statement dalam Python:
         4, 5
     ]
     ```
+    
