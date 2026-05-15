@@ -19,3 +19,49 @@
 
   opsi lain jika ingin open file yaitu dengan with, keuntungan menggunakan with adalah ini akan close secara otomatis.
 
+# Create, Write, Read
+untuk create file baru dan menulis 1 line.
+```python
+with open('file_baru.txt', 'w') as f:
+    f.write('baris pertama')
+```
+jika ingin multiple line	
+```python
+with open('file_baru.txt', 'w') as f:
+    f.writelines(['baris pertama\n', 'baris kedua'])
+```
+jika ingin menambahkan isi file tanpa menimpa gunakan append.
+```python
+with open('file_baru.txt', 'a') as f:
+    f.writelines(['\nbaris ketiga', '\nbaris keempat'])
+```
+read() -> output string yang akan berisi semua karakter.
+```python
+with open('file_baru.txt', 'r') as f:
+    content = f.read()
+    print(content)
+```
+dapat juga untuk mengeluarkan output beberapa karakter pertama.
+```python
+with open('file_baru.txt', 'r') as f:
+    content = f.read(40)
+    print(content)
+```
+readline() -> output 1 baris sebagai string.
+```python
+with open('file_baru.txt', 'r') as f:
+    content = f.readline()
+    print(content)
+```
+sama seperti sebelumnya ini juga dapat mengeluarkan output beberapa karakter pertama.
+```python
+with open('file_baru.txt', 'r') as f:
+    content = f.readline(10)
+    print(content)
+```
+readlines() -> output semua karakter dalam bentuk order list. bisa menggunakan fungsi for untuk read file.
+```python
+with open('file_baru.txt', 'r') as f:
+    content = f.readlines()
+    print(content)
+```
