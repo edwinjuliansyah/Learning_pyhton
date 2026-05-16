@@ -4,11 +4,11 @@ Error adalah kesalahaan sebelum kode dijalankan, kesalahan ini seperti syntax er
 Exception terjadi saat kode secara struktur sudah benar, tetapi ada masalah "tak terduga" saat program sedang berjalan. Misal 23/0 secara syntax munkin tidak salah tetapi secara matematika ini tidak mungkin dan akan menyebabkan ZeroDivisionError.
 
 Ada beberapa exception yang biasanya ditemukan:
-`ZeroDivisionError` Mencoba membagi angka dengan nol.
-`FileNotFoundError` Mencoba membuka file yang tidak ada di folder.
-`TypeError` Melakukan operasi pada tipe data yang salah (misal: int + str).
-`IndexError` Mencoba mengakses indeks list yang di luar jangkauan.
-`KeyError` Mencoba mencari kunci (key) yang tidak ada di dalam dictionary.
+- `ZeroDivisionError` Mencoba membagi angka dengan nol.
+- `FileNotFoundError` Mencoba membuka file yang tidak ada di folder.
+- `TypeError` Melakukan operasi pada tipe data yang salah (misal: int + str).
+- `IndexError` Mencoba mengakses indeks list yang di luar jangkauan.
+- `KeyError` Mencoba mencari kunci (key) yang tidak ada di dalam dictionary.
 
 Menangani exception bukan sekadar agar program tidak error, tapi tentang User Experience dan Keamanan:
 - Mencegah Crash: User tidak akan senang jika aplikasi atau websitemu tiba-tiba mati total karena satu kesalahan input.
@@ -97,7 +97,7 @@ Contoh penanganan file dengan `try-except`
 try:
     with open('file123.txt', 'r') as file:
         print(file.read())
-except:
+except FileNotFoundError:
     print("File tidak dapat ditemukan")
 
 ```
@@ -106,8 +106,8 @@ except:
 Path (jalur) adalah cara kita memberitahu komputer di mana sebuah file atau folder berada.
 - Absolute Path adalah alamat lengkap dan spesifik dari sebuah file, dimulai dari akar paling dasar (Root) sistem operasi hingga ke file tujuan. Jalur ini tidak peduli di mana posisi kamu sekarang jika kamu memberikan alamat ini, komputer akan selalu bisa menemukannya. Ciri Khas: Selalu dimulai dengan `/` (di Linux/macOS) atau `C:\` (di Windows).
 Contoh:
-  - Linux/macOS: /home/user/project/script.py
-  - Windows: C:\Users\Admin\Documents\file.txt
+  - Linux/macOS: `/home/user/project/script.py`
+  - Windows: `C:\Users\Admin\Documents\file.txt`
 
 - Relative Path adalah alamat file yang ditentukan berdasarkan posisi kamu berada saat ini (Current Working Directory). Jalur ini sangat bergantung pada "titik awal" kamu. Ciri Khas: Tidak dimulai dengan `/` atau `C:\`. Sering menggunakan simbol khusus:
   - `.` (Satu titik): Merujuk pada folder tempat kamu berada sekarang.
