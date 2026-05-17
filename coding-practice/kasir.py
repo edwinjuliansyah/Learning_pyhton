@@ -4,6 +4,8 @@ total_belanja = 0
 
 keranjang = {}
 
+nota = ""
+
 def garis():
   print("=" * len(warkop))
 
@@ -11,6 +13,17 @@ def tampilkan_keranjang(massage):
   print(massage)
   for key, value in keranjang.items():
     print(f"- {value['jumlah']} {value['nama']:<10} x Rp{value['harga']} = Rp{value['subtotal']:>6}")
+
+def buat_nota():
+  global nota
+  laporan = f" Nota Pembelian {nama_pembeli} "
+  nota += f"{laporan:=^{len(warkop)}}\n"
+  for key, value in keranjang.items():
+    nota += f"- {value['jumlah']} {value['nama']:<10} x Rp{value['harga']} = Rp{value['subtotal']:>6}\n"
+  nota += "=" * len(warkop) + "\n"
+  nota += f"Total Belanja: Rp{total_belanja}\n"
+  nota += "=" * len(warkop)
+  return nota
 
 print(warkop)
 menu = {
@@ -24,6 +37,8 @@ menu = {
 for item in menu:
     print(f"{item}. {menu[item]['nama']:<10} | Rp {menu[item]['harga']:>6}")
 garis()
+
+nama_pembeli = input("Masukkan nama anda: ").strip()
 
 while True:
   try:
@@ -69,7 +84,9 @@ while True:
   if pesanan_tambahan == "n":
     break
 
-garis()
-tampilkan_keranjang("Pesanan kamu:")
-garis()
-print(f"Total bayar Rp{total_belanja}")
+print(buat_nota())
+print(f"Terima kasih {nama_pembeli} telah memesan di Warkop Emun!\n")
+
+with open("laporan_nota.txt", "a") as file:
+    end = f"{nota}{'Transaksi selesai':=^{len(warkop)}}\n\n\n\n"
+    file.write(end)
